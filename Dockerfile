@@ -3,10 +3,10 @@
 # (C) 2023 DL7DET
 #
 
-FROM --platform=$TARGETPLATFORM alpine:3.18.4 AS base
+FROM --platform=$TARGETPLATFORM alpine:3.19.0 AS base
 
-RUN echo 'https://ftp.halifax.rwth-aachen.de/alpine/v3.18/main/' >> /etc/apk/repositories \
-    && echo 'https://ftp.halifax.rwth-aachen.de/alpine/v3.18/community' >> /etc/apk/repositories \
+RUN echo 'https://ftp.halifax.rwth-aachen.de/alpine/v3.19/main/' >> /etc/apk/repositories \
+    && echo 'https://ftp.halifax.rwth-aachen.de/alpine/v3.19/community' >> /etc/apk/repositories \
     && apk add --no-cache --update --upgrade su-exec ca-certificates
 
 FROM base AS openrc
